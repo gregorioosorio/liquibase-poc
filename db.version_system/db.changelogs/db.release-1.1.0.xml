@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
-        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 	<changeSet id="JIRA-ID-003" author="gregorio.osorio">
 		<tagDatabase tag="db.release-1.1.0"/>
 	</changeSet>
 
-    <changeSet id="JIRA-ID-004" author="gregorio.osorio">
-        <addColumn tableName="liquibase_poc_person">
-            <column name="username" type="varchar(8)"/>
-        </addColumn>
+	<changeSet id="JIRA-ID-004" author="gregorio.osorio">
+		<addColumn tableName="liquibase_poc_person">
+			<column name="username" type="varchar(8)"/>
+		</addColumn>
 		<rollback>
 			<dropColumn tableName="liquibase_poc_person"
 				columnName="username" />
 		</rollback>
-    </changeSet>
+	</changeSet>
 
 	<!-- here we can add as many changeset we need for complete the current release -->
 
