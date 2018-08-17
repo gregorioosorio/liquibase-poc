@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="JIRA-ID-001" author="gregorio.osorio">
+		<tagDatabase tag="db.release-1.0.0"/>
+	</changeSet>
+
+    <changeSet id="JIRA-ID-002" author="gregorio.osorio">
+        <createTable tableName="liquibase_poc_person">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstname" type="varchar(50)"/>
+            <column name="lastname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state" type="char(2)"/>
+        </createTable>
+		<rollback>
+			<dropTable tableName="liquibase_poc_person" />
+		</rollback>
+    </changeSet>
+
+	<!-- here we can add as many changeset we need for complete the current release -->
+
+</databaseChangeLog>
